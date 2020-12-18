@@ -312,11 +312,12 @@ button {
   }
   input {
     display: block;
+    box-sizing: border-box;
     border-radius: 10px;
     border: 1px solid rgb(231, 224, 224);
     background-color: #fafbff;
     height: 30px;
-    padding: 0 0px 0 0px;
+    padding: 0 15px;
   }
   .main {
     width: 80%;
@@ -472,7 +473,7 @@ button {
     width: 90.5%;
   }
   .button-text {
-    padding-top: 5  px;
+    padding-top: 5 px;
     font-size: 11px;
   }
 }
