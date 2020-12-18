@@ -1,0 +1,479 @@
+/*Heading Fonts*/
+@font-face {
+  font-family: custom-font;
+  src: url("../fonts/Custom-font.ttf");
+}
+/*-------------------*/
+/*Content Fonts*/
+@font-face {
+  font-family: custom-font-2;
+  src: url("../fonts/Customer-font-2.ttf");
+}
+/*-------------------*/
+/*Default Settings*/
+* {
+  margin: 0 auto;
+  font-family: custom-font-2;
+  padding: 0px;
+}
+body {
+  max-width: 1366px;
+  width: 100%;
+  height: auto;
+  background-image: linear-gradient(to bottom left, #d2d9eb 45%, #ebebfa 55%);
+  color: #5f5a6e;
+  background-repeat: no-repeat;
+  transition: background-color 1s linear;
+  font-size: smaller;
+}
+h1 {
+  padding: 20px 0px;
+  color: #281768;
+  font-size: xx-large;
+  font-family: custom-font;
+}
+p {
+  font-size: smaller;
+}
+
+a {
+  text-decoration: none;
+  color: #d4a0a8;
+}
+a:hover {
+  color: #fb4c53;
+}
+input {
+  border-radius: 10px;
+  border: 1px solid rgb(231, 224, 224);
+  background-color: #fafbff;
+  height: 30px;
+  padding: 0 10px;
+}
+button {
+  padding: 10px 20px;
+
+  background-color: white;
+  border: 1px solid rgb(231, 224, 224);
+
+  border-radius: 10px;
+  margin: 15px 0px 25px 0px;
+}
+
+.policy-box input[type="checkbox"] {
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-size: inherit;
+  width: 1em;
+  margin: 0;
+  color: inherit;
+  outline: none;
+  -webkit-transition: 300ms ease-out;
+  transition: 300ms ease-out;
+}
+.policy-box input[type="checkbox"]::after {
+  content: "\f111";
+  display: inline-block;
+  text-align: center;
+  width: 1em;
+}
+.policy-box input[type="checkbox"]:checked::after {
+  font-weight: 900;
+}
+.policy-box input[type="checkbox"]:active {
+  -webkit-transform: scale(0.6);
+  transform: scale(0.6);
+}
+
+.policy-box input[type="checkbox"]:checked::after {
+  content: "\f058";
+}
+
+.policy-box input[type="checkbox"]:after {
+  content: "\f0c8";
+}
+.policy-box input[type="checkbox"]:checked::after {
+  content: "\f14a";
+}
+/*---------------------------------*/
+
+/* Default page CSS*/
+.main {
+  width: 90%;
+  display: grid;
+  grid-template-columns: 45% 55%;
+  margin-top: 3%;
+  margin-bottom: 6%;
+  background-color: #ffffff;
+  padding: 35px 35px 35px 0px;
+  background-position: center;
+  border-radius: 20px;
+}
+/*-------------------------------*/
+
+/*------------------API CSS------------------*/
+.miniheading {
+  padding: 10px 0px;
+}
+.dash-image {
+  float: left;
+  width: 50px;
+  margin: 11px 20px 0px 0px;
+
+  border-radius: 50px;
+  border-top: 1px solid #e46c83;
+  height: 1px;
+  background-color: #e46c83;
+}
+.signupwith {
+  font-family: custom-font;
+  float: left;
+  color: #e46c83;
+}
+.clear {
+  clear: both;
+}
+
+.signup-options {
+  display: grid;
+  grid-template-columns: 48% 48%;
+  gap: 4%;
+  font-weight: 100;
+}
+.google-icon {
+  float: left;
+  width: 25px;
+  height: 25px;
+  background-color: #e46c83;
+}
+.facebook-icon {
+  float: left;
+  width: 25px;
+  height: 25px;
+  background-color: #e46c83;
+}
+.button-text {
+  font-size: 11px;
+  padding-top: 5px;
+}
+.api {
+  color: #6d687e;
+  font-size: 11px;
+}
+
+/*---------------------------------*/
+
+/*----------FORM FIELDS-----------------*/
+
+#name-email-box {
+  display: grid;
+  align-content: left;
+  grid-template-columns: repeat(2, auto);
+  gap: 4%;
+}
+.box {
+  width: 100%;
+  margin-top: 3%;
+}
+
+.box .input-box {
+  margin-top: 3%;
+  width: 90%;
+}
+.box .input-box-default {
+  margin-top: 3%;
+  width: 95%;
+}
+/*---------------------------------*/
+/* --------Policy Box------------- */
+
+.policy-box {
+  margin: 0;
+  width: 90%;
+}
+
+.toggle {
+  --uiToggleSize: var(--toggleSize, 1.25rem);
+  --uiToggleBorderWidth: var(--toggleBorderWidth, 2px);
+  --uiToggleColor: var(--toggleColor, #e46c83);
+
+  display: var(--toggleDisplay, inline-flex);
+  position: relative;
+}
+
+.toggle__input {
+  width: var(--uiToggleSize);
+  height: var(--uiToggleSize);
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+}
+
+.toggle__label {
+  display: inline-flex;
+  min-height: var(--uiToggleSize);
+  padding-left: calc(var(--uiToggleSize) + var(--toggleIndent, 0.4em));
+  cursor: pointer;
+}
+
+.toggle__label::after {
+  content: "";
+  box-sizing: border-box;
+  width: 1em; /*------*/
+  height: 1em;
+  font-size: var(--uiToggleSize); /* 1 */
+
+  background-color: transparent;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  border-radius: var(--toggleBorderRadius, 2px);
+  will-change: background-color;
+  transition: background-color 0.2s ease-out;
+  border: var(--uiToggleBorderWidth) solid rgb(231, 224, 224);
+}
+
+.toggle__input:checked ~ .toggle__label::after {
+  background-color: var(--uiToggleColor);
+  border: var(--uiToggleBorderWidth) solid uiToggleColor;
+}
+
+.toggle__label::before {
+  content: "";
+  width: 0;
+  height: 0;
+  font-size: var(--uiToggleSize); /* 1 */
+
+  border-left-width: 0;
+  border-bottom-width: 0;
+  border-left-style: solid;
+  border-bottom-style: solid;
+  border-color: var(--toggleArrowColor, #fff);
+
+  position: absolute;
+  top: 0.5428em;
+  left: 0.25em;
+  z-index: 3;
+
+  transform-origin: left top;
+  transform: rotate(-40deg) skew(10deg);
+} /*-------*/
+
+.toggle__input:checked ~ .toggle__label::before {
+  --uiToggleArrowWidth: var(--toggleArrowWidth, 2px);
+
+  width: 0.4em;
+  height: 0.2em;
+  border-left-width: var(--uiToggleArrowWidth);
+  border-bottom-width: var(--uiToggleArrowWidth);
+}
+/*-------------------------------------------------*/
+
+/*Submit Button*/
+.submit-form {
+  background-image: url("../graphics/submit-button.png");
+  background-color: #fb4c53;
+  height: 50px;
+  width: 50px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 30% 30%;
+  border-radius: 40%;
+  border: none;
+}
+
+.submit-form:hover {
+  background-color: #e46c83;
+}
+/*-------------------------------------*/
+
+/* ROCKET IMAGE */
+.rocket-image {
+  width: 100%;
+  text-indent: -99999px;
+  border: 2px solid rgb(230, 92, 42);
+  background-color: rgb(230, 92, 42);
+  margin-top: 5%;
+  background-size: cover;
+  background-position: center;
+}
+/*----------------------------------------*/
+
+/*MOBILE RESPONSIVENESS*/
+@media (min-width: 200px) and (max-width: 739px) {
+  button {
+    margin: 10px 0px 10px 0px;
+  }
+  input {
+    display: block;
+    border-radius: 10px;
+    border: 1px solid rgb(231, 224, 224);
+    background-color: #fafbff;
+    height: 30px;
+    padding: 0 0px 0 0px;
+  }
+  .main {
+    width: 80%;
+    display: block;
+    padding: 10px 15px 20px 15px;
+  }
+
+  .signup-options {
+    display: block;
+  }
+
+  .api {
+    width: 100%;
+  }
+
+  #name-email-box {
+    display: block;
+  }
+
+  .box {
+    display: block;
+    gap: 0%;
+    width: 100%;
+    margin-top: 3%;
+  }
+
+  .box .input-box {
+    width: 99.5%;
+  }
+  .box .input-box-default {
+    width: 99.5%;
+  }
+  .policy-box {
+    margin: 0;
+    width: 100%;
+  }
+  .rocket-image {
+    display: none;
+  }
+}
+/*-----------------------------------------------------------*/
+/*-------------TABLET + LESS THAN 1366 Screen----------------*/
+
+/*Default CSS FOR TABLET*/
+@media (min-width: 700px) and (max-width: 1365px) {
+  button {
+    padding: 10px 20px;
+    margin: 15px 0px 25px 0px;
+  }
+  input {
+    display: block;
+    border-radius: 10px;
+    border: 1px solid rgb(231, 224, 224);
+    background-color: #fafbff;
+    height: 30px;
+    padding: 0px 10px;
+  }
+  .main {
+    width: 90%;
+    display: grid;
+    padding: 10px 15px 20px 15px;
+  }
+
+  .signup-options {
+    display: grid;
+    grid-template-columns: 46% 46%;
+  }
+  .google-icon {
+    float: left;
+    width: 25px;
+    height: 25px;
+    padding-top: 3px;
+    background-color: #e46c83;
+  }
+  .facebook-icon {
+    float: left;
+    width: 25px;
+    padding-top: 3px;
+    height: 25px;
+    background-color: #e46c83;
+  }
+  .button-text {
+    padding-top: 0px;
+    font-size: 11px;
+  }
+  .api {
+    display: block;
+    width: 100%;
+  }
+  #name-email-box {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, auto);
+    gap: 0%;
+  }
+  .box {
+    width: 100%;
+    margin-top: 3%;
+  }
+
+  .box .input-box {
+    margin-top: 3%;
+    width: 77%;
+    margin-left: 0px;
+  }
+  .box .input-box-default {
+    margin-top: 3%;
+    margin-left: 0px;
+    width: 89%;
+  }
+  .policy-box {
+    margin: 0;
+    width: 90%;
+  }
+  .rocket-image {
+    display: block;
+  }
+}
+/*----------------------------*/
+
+/*Tablet with 800px width and ABOVE*/
+@media (min-width: 800px) and (max-width: 1023px) {
+  .box {
+    width: 100%;
+    margin-top: 3%;
+  }
+
+  .box .input-box {
+    margin-top: 3%;
+    width: 79%;
+    margin-left: 0px;
+  }
+  .box .input-box-default {
+    margin-top: 3%;
+    margin-left: 0px;
+    width: 89%;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1365px) {
+  .box {
+    width: 100%;
+    margin-top: 3%;
+  }
+
+  .box .input-box {
+    margin-top: 3%;
+    width: 81%;
+    margin-left: 0px;
+  }
+  .box .input-box-default {
+    margin-top: 3%;
+    margin-left: 0px;
+    width: 90.5%;
+  }
+  .button-text {
+    padding-top: 5  px;
+    font-size: 11px;
+  }
+}
+/*------------------------------*/
