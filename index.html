@@ -47,11 +47,24 @@
           <div id="name-email-box">
             <div class="box">
               <label for="name">Name</label>
-              <input type="text" class="input-box" id="name" name="name" />
+              <input
+                type="text"
+                class="input-box"
+                id="name"
+                name="name"
+                required
+              />
             </div>
             <div class="box">
               <label for="email">Email</label>
-              <input type="email" class="input-box" id="email" name="email" />
+              <input
+                type="email"
+                class="input-box"
+                id="email"
+                name="email"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                required
+              />
             </div>
           </div>
 
@@ -62,6 +75,8 @@
               class="input-box-default"
               id="password"
               name="password"
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+              required
             />
           </div>
           <! ----------------->
